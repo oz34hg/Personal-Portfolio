@@ -1,13 +1,43 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
     <title>Personal Portfolio</title>
 </head>
 <body>
-    <h1>Oreste Lara Torres</h1>
-    
+    <div class="space-layers" aria-hidden="true"></div>
+    <main class="page">
+        <section class="hero">
+            <div class="identity">
+                <img src="images/cat.jpeg" alt="Oreste Lara Torres profile photo" class="profile-pix">
+                <div class="name-wrap">
+                    <p class="eyebrow">Software Engineer</p>
+                    <h1>Oreste Lara Torres</h1>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="grid">
+            <article class="card terminal-card">
+                <div class="terminal-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <p>oreste@portfolio:~</p>
+                </div>
+                <pre class="terminal" aria-label="neofetch output">
+Name: Oreste Lara Torres
+Role: Software Engineer
+Experience: Java, C++, Python, JavaScript
+                </pre>
+            </article>
+        </section>
+    </main>
 </body>
 </html>
