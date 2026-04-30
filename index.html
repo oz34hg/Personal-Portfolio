@@ -3,77 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
-    <title>Personal Portfolio</title>
+    <title>OZ34HG // MULTIVERSE</title>
+    <style>
+        :root {
+            --primary-glow: #ff0055;
+            --secondary-glow: #00f2ff;
+        }
+
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #000;
+            /* Leopard print fallback pattern */
+            background-image: radial-gradient(#4d2e13 20%, transparent 20%),
+                              radial-gradient(#4d2e13 20%, transparent 20%);
+            background-position: 0 0, 50px 50px;
+            background-size: 100px 100px;
+            font-family: 'Courier New', Courier, monospace;
+            cursor: crosshair;
+        }
+
+        /* Sensory Overload Overlay */
+        .noise {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: url('https://media.giphy.com/media/oEI9uWUic9Zf2/giphy.gif');
+            opacity: 0.05;
+            pointer-events: none;
+            z-index: 999;
+        }
+
+        /* Floating Stickers */
+        .sticker {
+            position: absolute;
+            user-select: none;
+            cursor: move;
+            transition: transform 0.1s;
+            filter: drop-shadow(5px 5px 0px #000);
+        }
+
+        .sticker:hover {
+            transform: scale(1.2) rotate(10deg);
+            z-index: 100;
+        }
+
+        /* GitHub Profile Image */
+        #profile-pic {
+            width: 150px;
+            border: 5px solid #fff;
+            outline: 5px solid var(--primary-glow);
+            border-radius: 10px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1) rotate(-5deg); }
+            50% { transform: scale(1.1) rotate(5deg); }
+            100% { transform: scale(1) rotate(-5deg); }
+        }
+
+        /* Text Styles */
+        .neon-text {
+            color: #fff;
+            text-shadow: 0 0 10px var(--primary-glow), 0 0 20px var(--primary-glow);
+            font-size: 2rem;
+            background: rgba(0,0,0,0.7);
+            padding: 5px;
+        }
+
+        marquee {
+            position: fixed;
+            width: 100%;
+            background: #ff0055;
+            color: white;
+            font-weight: bold;
+            z-index: 1000;
+        }
+
+        .skill-card {
+            background: #fff;
+            border: 3px solid #000;
+            padding: 10px;
+            box-shadow: 10px 10px 0px #00f2ff;
+        }
+
+        #ui-layer {
+            pointer-events: none;
+            position: fixed;
+            top:0; left:0; width:100%; height:100%;
+        }
+    </style>
 </head>
 <body>
-    <div class="stars" aria-hidden="true"></div>
-    <div class="twinkling" aria-hidden="true"></div>
-    <div class="clouds" aria-hidden="true"></div>
-    <div class="shooting-stars" aria-hidden="true">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
+
+    <marquee scrollamount="20">SKILLS: C++ // JAVA // PYTHON // OVERLOAD DETECTED // 444 // ERROR: TOO COOL // SKILLS: C++ // JAVA // PYTHON</marquee>
+
+    <div class="noise"></div>
+
+    <div class="sticker" style="top: 15%; left: 10%;">
+        <a href="https://github.com/oz34hg" target="_blank">
+            <img id="profile-pic" src="https://github.com/oz34hg.png" alt="oz34hg profile">
+            <div class="neon-text" style="text-align:center;">OZ34HG</div>
+        </a>
     </div>
 
-    <main class="page">
-        <nav class="top-nav">
-            <a class="nav-link" href="index.html">Home</a>
-            <a class="nav-link" href="about.html">About</a>
-            <a class="nav-link" href="projects.html">Projects</a>
-            <a class="nav-link" href="contact.html">Contact</a>
-        </nav>
+    <div class="sticker skill-card" style="top: 50%; left: 40%; transform: rotate(-10deg);">
+        <h2>C++</h2>
+        <p>Memory Management & Chaos</p>
+    </div>
 
-        <section class="layout">
-            <div class="left-column">
-                <a class="card profile-card interactive tilt profile-link" href="https://github.com/oz34hg" target="_blank" rel="noopener noreferrer">
-                    <img src="images/cat.jpeg" alt="Oreste Lara Torres profile photo" class="profile-pix">
-                    <h1>Oreste Lara Torres</h1>
-                </a>
+    <div class="sticker skill-card" style="top: 20%; right: 15%; transform: rotate(15deg);">
+        <h2>JAVA</h2>
+        <p>Object-Oriented Madness</p>
+    </div>
 
-                <article class="card icon-card interactive">
-                    <h2>Stack</h2>
-                    <div class="icon-grid">
-                        <button class="chip" type="button">Java</button>
-                        <button class="chip" type="button">C++</button>
-                        <button class="chip" type="button">Python</button>
-                        <button class="chip" type="button">JavaScript</button>
-                        <button class="chip" type="button">Linux</button>
-                        <button class="chip" type="button">Git</button>
-                    </div>
-                </article>
-            </div>
+    <div class="sticker skill-card" style="top: 70%; left: 15%; transform: rotate(5deg);">
+        <h2>PYTHON</h2>
+        <p>Sleek. Fast. Lethal.</p>
+    </div>
 
-            <div class="right-column">
-                <article class="card interactive">
-                    <h2>GitHub</h2>
-                    <a class="github-link" href="https://github.com/oz34hg" target="_blank" rel="noopener noreferrer">
-                        github.com/oz34hg
-                    </a>
-                </article>
+    <div class="sticker neon-text" style="top: 40%; right: 10%;">LIPSTICK & LOGIC</div>
+    <div class="sticker" style="bottom: 10%; right: 10%; font-size: 5rem;">🎸</div>
+    <div class="sticker" style="top: 5%; right: 40%; font-size: 4rem;">✨</div>
+    <div class="sticker" style="bottom: 40%; left: 5%; font-size: 6rem; color: red;">777</div>
 
-                <article class="card terminal-card interactive tilt">
-                    <div class="terminal-header">
-                        <span class="dot red"></span>
-                        <span class="dot yellow"></span>
-                        <span class="dot green"></span>
-                        <p>oreste:~</p>
-                    </div>
-                    <pre class="terminal" aria-label="neofetch output">
-Name: Oreste Lara Torres
-Experience: Java, C++, Python, JavaScript
-                </pre>
-                </article>
-            </div>
-        </section>
-    </main>
+    <script>
+        // Make stickers draggable
+        const stickers = document.querySelectorAll('.sticker');
+        
+        stickers.forEach(sticker => {
+            let isDragging = false;
+            let offset = { x: 0, y: 0 };
 
-    <script src="script.js"></script>
+            sticker.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                offset.x = e.clientX - sticker.offsetLeft;
+                offset.y = e.clientY - sticker.offsetTop;
+                sticker.style.zIndex = 1000;
+            });
+
+            document.addEventListener('mousemove', (e) => {
+                if (isDragging) {
+                    sticker.style.left = (e.clientX - offset.x) + 'px';
+                    sticker.style.top = (e.clientY - offset.y) + 'px';
+                }
+            });
+
+            document.addEventListener('mouseup', () => {
+                isDragging = false;
+            });
+        });
+
+        // Sensory Sparkle Effect on Click
+        document.addEventListener('click', (e) => {
+            const sparkle = document.createElement('div');
+            sparkle.innerHTML = 'XOXO';
+            sparkle.style.position = 'fixed';
+            sparkle.style.left = e.clientX + 'px';
+            sparkle.style.top = e.clientY + 'px';
+            sparkle.style.color = '#ff0055';
+            sparkle.style.fontWeight = 'bold';
+            sparkle.style.pointerEvents = 'none';
+            sparkle.style.zIndex = 10000;
+            document.body.appendChild(sparkle);
+
+            setTimeout(() => sparkle.remove(), 1000);
+        });
+    </script>
 </body>
 </html>
