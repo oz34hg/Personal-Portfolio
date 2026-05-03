@@ -1,0 +1,42 @@
+body {
+    background-color: #000000;
+    text-align: center;
+    font-family: 'Inclusive Sans', sans-serif;
+}
+
+nav {
+    font-family: 'Inclusive Sans';
+    background-color: we;
+}
+
+nav button {
+    background-color: #ffca4d;
+    color: black;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    font: 800;
+}
+
+
+.name-main {
+    color: wheat;
+}
+
+.profile-main img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover; 
+    border-radius: 50%; 
+    padding: 10px;
+    border: 8px solid #64734c;
+    transition: border 0.2s ease-in-out;
+    transition: border-radius 0.2s ease-in-out;
+}
+
+.profile-main img:hover {
+    border: 16px solid  #859966;
+    border-radius: 25%;
+}
+
