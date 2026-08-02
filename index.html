@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Darknet Resource Collection</title>
+
+<title>Links</title>
 
 <style>
 *{
@@ -13,262 +14,119 @@
 }
 
 body{
-    font-family:Arial,Helvetica,sans-serif;
+    font-family:Arial, sans-serif;
     color:white;
 
     background-image:url("https://raw.githubusercontent.com/oz34hg/Personal-Portfolio/main/IMG_6129.jpeg");
     background-repeat:repeat;
-    background-size:220px;
-
-    backdrop-filter:blur(2px);
+    background-size:200px;
 }
 
-.overlay{
+.container{
     min-height:100vh;
-    background:rgba(0,0,0,.82);
-    padding:40px;
+    padding:30px;
+    background:rgba(0,0,0,0.85);
 }
 
-h1{
-    text-align:center;
-    font-size:42px;
-    color:#00ff99;
-    margin-bottom:10px;
-}
-
-.subtitle{
-    text-align:center;
-    color:#bbb;
-    margin-bottom:35px;
-}
-
-.disclaimer{
-    background:#111;
-    border-left:5px solid #00ff99;
-    padding:20px;
-    margin-bottom:30px;
-}
-
-.search{
+input{
     width:100%;
     padding:15px;
-    font-size:18px;
-    border:none;
-    outline:none;
-    background:#222;
+    margin-bottom:25px;
+    background:#111;
+    border:1px solid #444;
     color:white;
+    font-size:18px;
     border-radius:8px;
-    margin-bottom:40px;
 }
 
-.category{
-    margin-bottom:40px;
-}
-
-.category h2{
-    color:#00ffaa;
-    border-bottom:2px solid #00ffaa;
-    padding-bottom:8px;
-    margin-bottom:15px;
-}
-
-.grid{
+.links{
     display:grid;
     grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
-    gap:18px;
+    gap:15px;
 }
 
-.card{
-    background:rgba(25,25,25,.92);
+.link{
+    padding:15px;
+    background:#151515;
     border:1px solid #333;
-    border-radius:10px;
-    padding:18px;
-    transition:.25s;
+    border-radius:8px;
 }
 
-.card:hover{
-    transform:translateY(-5px);
+.link:hover{
     border-color:#00ff99;
-    box-shadow:0 0 18px #00ff9955;
 }
 
-.card h3{
+a{
     color:#00ff99;
-    margin-bottom:10px;
-}
-
-.card p{
-    color:#ccc;
-    margin-bottom:12px;
-}
-
-.card a{
-    color:#66ddff;
     text-decoration:none;
     word-break:break-all;
 }
 
-footer{
-    text-align:center;
-    margin-top:60px;
-    color:#888;
-}
 </style>
+
 </head>
 
 <body>
 
-<div class="overlay">
+<div class="container">
 
-<h1>Darknet Resource Collection</h1>
-
-<p class="subtitle">
-Educational Demonstration Project
-</p>
-
-<div class="disclaimer">
-<h3>Disclaimer</h3>
-
-<p>
-This website is an educational mockup demonstrating how a categorized
-resource directory could be organized. All resource entries shown below
-are placeholders.
-</p>
-
-</div>
-
-<input
-class="search"
-type="text"
+<input 
 id="search"
-placeholder="Search resources..."
+placeholder="Search links..."
 >
 
-<div id="container">
+<div class="links" id="links"></div>
 
 </div>
 
-<footer>
-
-Built as a local HTML demonstration project.
-
-</footer>
-
-</div>
 
 <script>
 
-const sections={
+const links = [
 
-"General":[
-"Resource Placeholder 1",
-"Resource Placeholder 2",
-"Resource Placeholder 3",
-"Resource Placeholder 4",
-"Resource Placeholder 5",
-"Resource Placeholder 6"
-],
+["Link 1","https://example.com"],
+["Link 2","https://example.com"],
+["Link 3","https://example.com"]
 
-"Communication":[
-"Mail Service Placeholder",
-"Forum Placeholder",
-"Chat Placeholder",
-"Messaging Placeholder",
-"Social Platform Placeholder"
-],
+];
 
-"Cryptocurrency":[
-"Wallet Placeholder",
-"Exchange Placeholder",
-"Privacy Coin Placeholder",
-"Blockchain Explorer Placeholder"
-],
 
-"File Sharing":[
-"File Host Placeholder",
-"Drop Service Placeholder",
-"Library Placeholder",
-"E-Book Placeholder",
-"Torrent Placeholder"
-],
+const box=document.getElementById("links");
 
-"News":[
-"News Site Placeholder",
-"Independent News Placeholder",
-"Journal Placeholder",
-"Press Placeholder"
-],
 
-"Privacy & Security":[
-"Operating System Placeholder",
-"VPN Placeholder",
-"Security Guide Placeholder",
-"Browser Placeholder",
-"Documentation Placeholder"
-],
+function load(filter=""){
 
-"Search Engines":[
-"Search Engine Placeholder 1",
-"Search Engine Placeholder 2",
-"Search Engine Placeholder 3",
-"Search Engine Placeholder 4",
-"Search Engine Placeholder 5",
-"Search Engine Placeholder 6",
-"Search Engine Placeholder 7"
-]
+box.innerHTML="";
 
-};
+links
+.filter(x =>
+x[0].toLowerCase().includes(filter.toLowerCase()) ||
+x[1].toLowerCase().includes(filter.toLowerCase())
+)
+.forEach(x=>{
 
-const container=document.getElementById("container");
-
-function render(filter=""){
-
-container.innerHTML="";
-
-for(const category in sections){
-
-const matches=sections[category].filter(item=>
-item.toLowerCase().includes(filter.toLowerCase())
-);
-
-if(matches.length===0) continue;
-
-const section=document.createElement("div");
-section.className="category";
-
-section.innerHTML=`
-<h2>${category}</h2>
-<div class="grid">
-${matches.map(name=>`
-<div class="card">
-
-<h3>${name}</h3>
-
-<p>
-Description placeholder.
-Replace this text with your own project information.
-</p>
-
-<a href="#">
-PLACEHOLDER_LINK
+box.innerHTML += `
+<div class="link">
+<a href="${x[1]}" target="_blank">
+${x[0]}<br>
+${x[1]}
 </a>
-
-</div>
-`).join("")}
 </div>
 `;
 
-container.appendChild(section);
-
-}
-
-}
-
-render();
-
-document.getElementById("search").addEventListener("input",e=>{
-render(e.target.value);
 });
+
+}
+
+
+load();
+
+
+document.getElementById("search")
+.addEventListener("input",e=>{
+load(e.target.value);
+});
+
 
 </script>
 
